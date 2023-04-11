@@ -27,6 +27,6 @@ Console.WriteLine("Undo..");
 document.RestoreState(history.Pop());
 Console.WriteLine(document);
 Console.WriteLine("Undo..");
-document.RestoreState(history.Pop());
 Console.WriteLine(document);
+
 

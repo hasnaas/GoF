@@ -55,10 +55,5 @@ namespace DesignPatterns
             FontSize = fontSize;
         }
 
-        private DocumentState GetState()
-        {
-            return this;
-        }
-
     }
 }
