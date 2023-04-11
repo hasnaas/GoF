@@ -1,0 +1,6 @@
+﻿Problem :
+Need to save object states and restore it to previous ones; While respecting the Single Responsability principle and withoud revealing the oobect implementation details
+
+Solution :
+The creation of snapshots is delegated to the owner of the state (referred to as the originator). Theses snapshots are copied in other objects called mementos. 
+a third type of object (the caretaker), orchestrate the creation/restore of snapshots and has limied access to snapshot data (stille not implemented in the example)

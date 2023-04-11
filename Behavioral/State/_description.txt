@@ -1,0 +1,5 @@
+﻿Problem :
+Having a lot of reapeating conditional statments (if/els or switch) to select the appropriate behavior depnding on the current state of the object
+
+Solution :
+Create as many calsses as there are possible states and extract all state-specfic behavior into theses classes
