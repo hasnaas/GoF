@@ -1,4 +1,5 @@
 ﻿using DesignPatterns;
+using DesignPatterns.Behavioral.State;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -28,5 +29,14 @@ document.RestoreState(history.Pop());
 Console.WriteLine(document);
 Console.WriteLine("Undo..");
 Console.WriteLine(document);
+Console.WriteLine("----------State-------------");
+var walking = new WalkingMode();
+var driving = new DrivingMode();
+
+var direction = new DirectionService(driving);
+Console.WriteLine("Now driving ... ETA is :"+ direction.getETA());
+direction.TravelMode= walking;
+Console.WriteLine("Now walking ... ETA is :"+ direction.getETA());
+;
 
 
