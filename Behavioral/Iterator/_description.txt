@@ -1,0 +1,7 @@
+﻿Problem :
+We need to traverse a collection without exposing its internals. If those latters come to change, this will avoid breaking changes in the consumers. 
+
+Solution :
+Extract all the iteration implementatoon details into a separate object called iterator. Typically, Iterator is an interface that is implemented differently dependy on the internal data stucture used in the collection.
+There can be no breaking changes in the consumers because they always get the same iterator type. 
+
