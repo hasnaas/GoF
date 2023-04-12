@@ -1,0 +1,10 @@
+﻿Problem :
+A class (Context) that performs different actions in a lot of differents ways. for example an Image Storing class that performs compression and filtering (many algorithms) before storing.  
+
+Solution : 
+Put each algorithm in a separte class and delegate the work to linked (strategy) objects. 
+
+Similarity with State pattern :
+The two patterns have similar implementations, the difference lies rather in the intent :  we are trying to adapt behavior, either based on our state (state pattern), or based on something else (strategy pattern). 
+Quite often that something else is "what the client chooses", through injection.
+
