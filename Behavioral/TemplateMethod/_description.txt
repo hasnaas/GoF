@@ -1,0 +1,7 @@
+﻿Problem :
+We have several classes that perform different actions but with some common parts that are repeated. 
+For example, different classes to mine data from different file formats : analysis and report generation are the same while opening files and extracting data from them depend on file format.
+
+Solution :
+Define the skeleton of the algorithm (the template) in a superClass and let the subclasses override specific processing without changing the overall structure.
+In the previous example, methods for opening files and extracting data from them will be overriden in each subclass, the rest is defined in the superclass.

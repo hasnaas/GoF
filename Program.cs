@@ -1,6 +1,7 @@
 ﻿using DesignPatterns;
 using DesignPatterns.Behavioral.Iterator;
 using DesignPatterns.Behavioral.State;
+using DesignPatterns.Behavioral.TemplateMethod;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -39,7 +40,7 @@ var direction = new DirectionService(driving);
 Console.WriteLine("Now driving ... ETA is :"+ direction.getETA());
 direction.TravelMode= walking;
 Console.WriteLine("Now walking ... ETA is :"+ direction.getETA());
-*/
+
 Console.WriteLine("----------Iterator-------------");
 var mcollection = new ProductCollection();
 var p1 = new Product(1, "tomatoe");
@@ -54,6 +55,17 @@ while (iterator.HasNext())
 {
     Console.WriteLine(iterator.Next());
 }
+
+*/
+
+Console.WriteLine("--------Template Method-------");
+
+var pdfMiner = new PDFdataMiner();
+var docxMiner = new DOCXdataMiner();
+
+pdfMiner.MineFile("path-to-pdfFile");
+docxMiner.MineFile("path-to-docxFile");
+
 
 
 
