@@ -1,0 +1,10 @@
+﻿Problem : (through an example)
+a button in a graphical ui have different click action depending on where it is placed. 
+Having as many subclasses of a button superclass as there are different actions is obviously unmaintainable : too many subclasses, breaking changes, duplication if some actions need to be called from elsewhere as well ...
+
+Solution :
+put the action logic inside the related business object, create a command object that knows how to call the action in its execute() method, and use this command object  as a link between the UI and the business Object.
+The click() method of buttons would call execute() method of appropriate Command object.
+
+Advantges : 
+we can replay a serie of commands (like a given image processing batch), implement the undo mechanism (see code), delay or queue requests' execution ...

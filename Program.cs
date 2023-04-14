@@ -1,7 +1,9 @@
 ﻿using DesignPatterns;
+using DesignPatterns.Behavioral.Command;
 using DesignPatterns.Behavioral.Iterator;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.TemplateMethod;
+using History = DesignPatterns.Behavioral.Command.History;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -56,7 +58,7 @@ while (iterator.HasNext())
     Console.WriteLine(iterator.Next());
 }
 
-*/
+
 
 Console.WriteLine("--------Template Method-------");
 
@@ -65,7 +67,30 @@ var docxMiner = new DOCXdataMiner();
 
 pdfMiner.MineFile("path-to-pdfFile");
 docxMiner.MineFile("path-to-docxFile");
+*/
 
+Console.WriteLine("--------Command-------");
+//Basic example
+var service = new CustomerService();
+var addCommand=new AddCustomerCommand(service);
+var button = new Button(addCommand);
+button.Click();
+//Composite command
+var composite = new CompositeCommand();
+composite.AddCommand(new ResizeCommand());
+composite.AddCommand(new BlackAndWhiteCommand());
+composite.execute();
+//implementing undo mechanism
+var history = new History();
+var document=new HTMLdocument();
+document.Content = "Command pattern in action";
+var boldCmd=new BoldCommand(document,history);
+boldCmd.execute();
+history.Push(boldCmd);
+Console.WriteLine(document.Content);
+if(history.Size() > 0)
+history.Pop().unexecute();
+Console.WriteLine(document.Content);
 
 
 
