@@ -1,0 +1,11 @@
+﻿Problem :
+In some scenarios, objects need to know about the changes that happen to another object, for example a customer object needs to know about the availability change of a store product, a speedsheet cell that performs a calculation on other cells value needs to update its result
+depending on value changes in these other cells, a gui that tracks stock prices changes ...
+A publish/subscribe mechanism is needed to allow this kind of communication. 
+
+Solution :
+The observer pattern defines such subscription mechanism : The subject (data source) maintain a list of subscribers objects and notify them whenever necessary. It has methods for adding & removing subscribers. 
+Since there can be many types of data sources and many types of subscribers, we use interfaces and inheritance classes to avoid loose coupling, thus :
+all data sources implements a Subscriber superClass that define subscrption handling methods, and all subscribers implement an Observer interface that declare an update() method. We only have coupling between Subscriber and Observer.
+
+Update data can be obtained either using a Push or a Pull style.

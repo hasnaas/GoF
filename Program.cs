@@ -1,6 +1,7 @@
 ﻿using DesignPatterns;
 using DesignPatterns.Behavioral.Command;
 using DesignPatterns.Behavioral.Iterator;
+using DesignPatterns.Behavioral.Observer;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.TemplateMethod;
 using History = DesignPatterns.Behavioral.Command.History;
@@ -67,7 +68,7 @@ var docxMiner = new DOCXdataMiner();
 
 pdfMiner.MineFile("path-to-pdfFile");
 docxMiner.MineFile("path-to-docxFile");
-*/
+
 
 Console.WriteLine("--------Command-------");
 //Basic example
@@ -91,6 +92,22 @@ Console.WriteLine(document.Content);
 if(history.Size() > 0)
 history.Pop().unexecute();
 Console.WriteLine(document.Content);
+*/
+Console.WriteLine("--------Observer-------");
+var appleStock = new Stock("AAPL",3000);
+var googleStock = new Stock("GOOGL",4000);
+var gmStock = new Stock("General Motors",150);
+var statusBar = new StatusBar();
+statusBar.AddStock(appleStock);
+statusBar.AddStock(googleStock);
+var stocklistView=new StockListView();
+stocklistView.AddStock(appleStock);
+stocklistView.AddStock(googleStock);
+stocklistView.AddStock(gmStock);
+
+
+appleStock.Price = 5000;
+googleStock.Price = 8000;
 
 
 
