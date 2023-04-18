@@ -6,9 +6,10 @@ using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.TemplateMethod;
 using History = DesignPatterns.Behavioral.Command.History;
 using DesignPatterns.Behavioral.Mediator;
+using DesignPatterns.Behavioral.ChainOfResponsability;
 
     // See https://aka.ms/new-console-template for more information
-    Console.WriteLine("GoF Design Patterns Overview");
+Console.WriteLine("GoF Design Patterns Overview");
 Console.WriteLine("/*****************************/");
 Console.WriteLine("/****Behavioral patterns*****/");
 /*
@@ -106,10 +107,24 @@ stocklistView.AddStock(googleStock);
 stocklistView.AddStock(gmStock);
 appleStock.Price = 5000;
 googleStock.Price = 8000;
-*/
+
 Console.WriteLine("--------Mediator-------");
 var form = new RegisterFormDialogBox();
 form.SimulateInteraction();
+*/
+
+Console.WriteLine("-----Chain Of Responsability-----");
+//building the chain
+var compressor = new Compressor(null);
+var logger = new Logger(compressor);
+var authenticator=new Authenticator(logger);
+//applying
+var server=new WebServer(authenticator);
+Console.WriteLine("First request");
+server.handle(new HttpRequest("admin", "1234"));
+Console.WriteLine("Second request");
+server.handle(new HttpRequest("admin2", "1234"));
+
 
 
 

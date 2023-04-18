@@ -1,0 +1,7 @@
+﻿Problem :
+We need to process different kinds of requests in various ways, a case in point is a web server processing an http request. 
+Having everything done in one class is hard to maintain and reuse.
+
+Solution :
+different behaviors are transformed into stand-alone objects called handlers that take the request as parametrer. 
+these handlers are linked into a chain: each handler processes the request and passes it to the next handler.
