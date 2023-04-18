@@ -20,7 +20,7 @@ namespace DesignPatterns.Behavioral.Observer
             _observers.Remove(o);
         }
 
-        public void NotifyObservers(object obj)
+        protected void NotifyObservers(object obj)
         {
             foreach (Observer o in _observers)
                 o.Update();

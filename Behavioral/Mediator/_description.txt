@@ -1,0 +1,7 @@
+﻿Problem :
+There are a lot of components that need to communicate and adapt depending on each other states. Having bidirectional communication implies strong coupling and prevent code ruesability.
+For example Gui elements (buttons, textboxes, checkboxes ...) must be able to communicate while being independant : we should be able to reuse them in different screens and scenarii. 
+
+Solution : 
+All elments should collaborate indirectly by calling a mediator object. This mediator should be notified of their state changes, and have the logic to decide on the appropriate behavior of the elements.
+This pattern is implemented using the observer pattern. 

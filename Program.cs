@@ -5,9 +5,10 @@ using DesignPatterns.Behavioral.Observer;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.TemplateMethod;
 using History = DesignPatterns.Behavioral.Command.History;
+using DesignPatterns.Behavioral.Mediator;
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("GoF Design Patterns Overview");
+    // See https://aka.ms/new-console-template for more information
+    Console.WriteLine("GoF Design Patterns Overview");
 Console.WriteLine("/*****************************/");
 Console.WriteLine("/****Behavioral patterns*****/");
 /*
@@ -92,7 +93,6 @@ Console.WriteLine(document.Content);
 if(history.Size() > 0)
 history.Pop().unexecute();
 Console.WriteLine(document.Content);
-*/
 Console.WriteLine("--------Observer-------");
 var appleStock = new Stock("AAPL",3000);
 var googleStock = new Stock("GOOGL",4000);
@@ -104,10 +104,12 @@ var stocklistView=new StockListView();
 stocklistView.AddStock(appleStock);
 stocklistView.AddStock(googleStock);
 stocklistView.AddStock(gmStock);
-
-
 appleStock.Price = 5000;
 googleStock.Price = 8000;
+*/
+Console.WriteLine("--------Mediator-------");
+var form = new RegisterFormDialogBox();
+form.SimulateInteraction();
 
 
 
