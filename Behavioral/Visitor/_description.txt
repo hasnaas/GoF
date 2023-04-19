@@ -1,5 +1,14 @@
 ﻿Problem :
+It should be possible to define a new operation for (some) classes of an object structure. 
+When new operations are needed frequently and the object structure consists of many unrelated classes, it's inflexible to add new subclasses each time a new operation is required because
+distributing all these operations across the various node classes leads to a system that's hard to understand, maintain, and change.
 
+For example an html document is a structure of several html nodes (headings, anchors, paragraphs ...) : Without a pattern,  each time we want to add a new operation on the html document(for example highlighting, underlining ...) we would go
+to each node class and modify so it supports the new operation. This will violate SRP and OCP principles and lead to a hardly maintainable codebase
 
 Solution :
-The visitor pattern allows adding new operations to an object structure without modifying it.
+The visitor pattern allows adding new operations to an object structure without modifying it, thus allowing the OCP principle ( Open for extension, closed for modification )
+
+In the previous example, all operations would implements an operation interfaces that declares as many overloaded Apply(Node node) methods as there are different html nodes. Thus, each specific operation would define how to perform its actions on different html nodes.
+All html nodes would implement a unique Node interface that declares an Execute(Operation op) method. The implmentation would simply call the operation Apply method with the caller as parameter. 
+This ways, algorithms are separated from the objects on which they operate
