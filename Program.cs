@@ -7,6 +7,7 @@ using DesignPatterns.Behavioral.TemplateMethod;
 using History = DesignPatterns.Behavioral.Command.History;
 using DesignPatterns.Behavioral.Mediator;
 using DesignPatterns.Behavioral.ChainOfResponsability;
+using DesignPatterns.Behavioral.Visitor;
 
     // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -111,7 +112,7 @@ googleStock.Price = 8000;
 Console.WriteLine("--------Mediator-------");
 var form = new RegisterFormDialogBox();
 form.SimulateInteraction();
-*/
+
 
 Console.WriteLine("-----Chain Of Responsability-----");
 //building the chain
@@ -124,7 +125,15 @@ Console.WriteLine("First request");
 server.handle(new HttpRequest("admin", "1234"));
 Console.WriteLine("Second request");
 server.handle(new HttpRequest("admin2", "1234"));
+*/
 
 
+Console.WriteLine("--------Visitor-------");
+var document = new DesignPatterns.Behavioral.Visitor.HTMLdocument();
+document.Add(new HeadingNode());
+document.Add(new AnchorNode());
+
+document.Execute(new HighlightOperation());
+document.Execute(new UnderlineOperation());
 
 

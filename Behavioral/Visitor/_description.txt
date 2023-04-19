@@ -1,0 +1,5 @@
+﻿Problem :
+
+
+Solution :
+The visitor pattern allows adding new operations to an object structure without modifying it.
