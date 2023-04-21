@@ -8,6 +8,7 @@ using History = DesignPatterns.Behavioral.Command.History;
 using DesignPatterns.Behavioral.Mediator;
 using DesignPatterns.Behavioral.ChainOfResponsability;
 using DesignPatterns.Behavioral.Visitor;
+using DesignPatterns.Structural.Composite;
 
     // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -125,7 +126,7 @@ Console.WriteLine("First request");
 server.handle(new HttpRequest("admin", "1234"));
 Console.WriteLine("Second request");
 server.handle(new HttpRequest("admin2", "1234"));
-*/
+
 
 
 Console.WriteLine("--------Visitor-------");
@@ -135,5 +136,21 @@ document.Add(new AnchorNode());
 
 document.Execute(new HighlightOperation());
 document.Execute(new UnderlineOperation());
+*/
 
+Console.WriteLine("/****Structural patterns*****/");
+var subTeam1 = new Team();
+var subTeam2 = new Team();
 
+subTeam1.Add(new TruckResource());
+subTeam1.Add(new HumanResource());
+subTeam1.Add(new HumanResource());
+
+subTeam2.Add(new TruckResource());
+subTeam2.Add(new HumanResource());
+
+var team =new Team();
+team.Add(subTeam1);
+team.Add(subTeam2);
+
+team.Deploy();

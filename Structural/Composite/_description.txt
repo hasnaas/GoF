@@ -1,0 +1,7 @@
+﻿Usefulness :
+The composite pattern is useful whenever we want to represent a hierarchy of objects and we want to treat them the same way.
+For example, in the files and folders hierarchy, we need to have common methods over the two objects (delete, move ...)
+
+Typically, we extract an interface with the common behavior, and have other classes implement this interface. 
+In the example : in an incident management oranisation, a team includes a truck and seveal human resources. a team can have subteams. 
+depending on the size of the incident, we may need to deploy composite teams. 
