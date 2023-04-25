@@ -9,8 +9,9 @@ using DesignPatterns.Behavioral.Mediator;
 using DesignPatterns.Behavioral.ChainOfResponsability;
 using DesignPatterns.Behavioral.Visitor;
 using DesignPatterns.Structural.Composite;
+using DesignPatterns.Structural.Adapter;
 
-    // See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
 Console.WriteLine("/*****************************/");
 Console.WriteLine("/****Behavioral patterns*****/");
@@ -139,6 +140,8 @@ document.Execute(new UnderlineOperation());
 */
 
 Console.WriteLine("/****Structural patterns*****/");
+/*
+Console.WriteLine("-----Composite-----");
 var subTeam1 = new Team();
 var subTeam2 = new Team();
 
@@ -152,5 +155,11 @@ subTeam2.Add(new HumanResource());
 var team =new Team();
 team.Add(subTeam1);
 team.Add(subTeam2);
-
 team.Deploy();
+*/
+
+Console.WriteLine("-----Adapter-----");
+var gmailCLient = new GmailAdapter();
+var emailClient= new EmailClient();
+emailClient.AddProvider(gmailCLient);
+emailClient.DownloadEmails();

@@ -1,0 +1,7 @@
+﻿Problem :
+Need to use 3rd-party libraries that do not plug directly in the existing code, becasue using different interfaces.  For example : a code that processes only xml files need to use a library that only works with json,
+a email client that need to be extended to talk to another service that provide its own client(need to reuse) ...
+
+
+Solution :
+Create a special class(generally an interface) that converts the interface of one object so the other object can understand it. 
