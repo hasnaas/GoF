@@ -1,0 +1,9 @@
+﻿Problem :
+We need to add new behaviors to objects and have the ability to dynamically combine them. 
+For example, for a class that saves data into the cloud, we need to have the ability to encrypt data, the compress data, or do both. 
+Coding everything in the original class would violate the single responsability principle. 
+Having a new class that encypt data and a new class that compress data will oblige to have a thir class that compress and encrypt data, which is redundant.
+
+Solution :
+we attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+In the previous example, compressing and encrypting are new behaviors that would be added via decorator classes to the original class. we can add one as well as several decorators  by nesting constructors. 

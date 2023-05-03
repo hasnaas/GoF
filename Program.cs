@@ -10,6 +10,7 @@ using DesignPatterns.Behavioral.ChainOfResponsability;
 using DesignPatterns.Behavioral.Visitor;
 using DesignPatterns.Structural.Composite;
 using DesignPatterns.Structural.Adapter;
+using DesignPatterns.Structural.Decorator;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -156,10 +157,15 @@ var team =new Team();
 team.Add(subTeam1);
 team.Add(subTeam2);
 team.Deploy();
-*/
+
 
 Console.WriteLine("-----Adapter-----");
 var gmailCLient = new GmailAdapter();
 var emailClient= new EmailClient();
 emailClient.AddProvider(gmailCLient);
 emailClient.DownloadEmails();
+*/
+
+Console.WriteLine("-----Decorator-----");
+var editor = new Editor();
+editor.OpenProject("path-to-project");
