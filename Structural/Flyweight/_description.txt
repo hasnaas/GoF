@@ -1,0 +1,7 @@
+﻿Problem :
+Some applications use a lot of objects that become memory consuming. 
+For example a mapping apps uses a lot of mapping points (type, coordinates and icon) that consumes memory (because of the icons) and may slow rendering in limited memory devices (phones for example)
+
+Solution:
+The flyweight pattern allow reuse of commen parts of objects. In the previous example, we can have a separate icon class and use a sinlge instance for all cafés points, a single instance for all hotels points ...
+a flyweight object should be immutable.

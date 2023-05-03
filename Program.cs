@@ -12,6 +12,7 @@ using DesignPatterns.Structural.Composite;
 using DesignPatterns.Structural.Adapter;
 using DesignPatterns.Structural.Decorator;
 using DesignPatterns.Structural.Facade;
+using DesignPatterns.Structural.Flyweight;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -170,8 +171,14 @@ emailClient.DownloadEmails();
 Console.WriteLine("-----Decorator-----");
 var editor = new Editor();
 editor.OpenProject("path-to-project");
-*/
+
 
 Console.WriteLine("-----Facade-----");
 var twitterFacade = new TwitterService();
 twitterFacade.getTweets();
+*/
+
+Console.WriteLine("-----Flyweight-----");
+
+var pointService = new PointService(new PointIconFactory());
+pointService.getPoints();
