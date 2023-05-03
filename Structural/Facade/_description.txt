@@ -1,0 +1,6 @@
+﻿Problem :
+Using a complex system often requires initializing many objects, keeping track of dependencies, executing methods in correct order ...and it may be needed to do so in mutltiple places. 
+
+
+Solution :
+The facade pattern provides a simple interface to a complex system. That facilitate usage, reduce coupling, and facilitate updates.

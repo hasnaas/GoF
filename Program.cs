@@ -11,6 +11,7 @@ using DesignPatterns.Behavioral.Visitor;
 using DesignPatterns.Structural.Composite;
 using DesignPatterns.Structural.Adapter;
 using DesignPatterns.Structural.Decorator;
+using DesignPatterns.Structural.Facade;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -164,8 +165,13 @@ var gmailCLient = new GmailAdapter();
 var emailClient= new EmailClient();
 emailClient.AddProvider(gmailCLient);
 emailClient.DownloadEmails();
-*/
+
 
 Console.WriteLine("-----Decorator-----");
 var editor = new Editor();
 editor.OpenProject("path-to-project");
+*/
+
+Console.WriteLine("-----Facade-----");
+var twitterFacade = new TwitterService();
+twitterFacade.getTweets();
