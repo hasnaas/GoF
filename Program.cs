@@ -16,6 +16,7 @@ using DesignPatterns.Structural.Flyweight;
 using DesignPatterns.Structural.Bridge;
 using DesignPatterns.Structural.Proxy;
 using DesignPatterns.Creational.Prototype;
+using DesignPatterns.Creational.Singleton;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -219,6 +220,7 @@ dbContext.saveChanges();
 */
 
 Console.WriteLine("/****Creational patterns*****/");
+/*
 Console.WriteLine("-----Prototype-----");
 var timeline = new Timeline();
 var text = new Text("Hello");
@@ -226,3 +228,11 @@ timeline.Add(text);
 
 var menu = new ContextMenu(timeline);
 menu.Duplicate(text);
+*/
+Console.WriteLine("-----Singleton-----");
+
+var config = ConfigManager.GetInstance();
+config.Set("key1", "val1");
+
+var other=ConfigManager.GetInstance();
+Console.WriteLine(other.Get("key1"));

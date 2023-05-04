@@ -1,0 +1,5 @@
+﻿Problem:
+Sometimes, we need one single instance of a class to be shared by all clients, for example: a database context, a configuration manager...
+Solution:
+Singleton pattern ensures that a class has only one instance, while providing a global access point to this instance.
+the constructor has to be made private, and called once to initialize a static field (the instance). 
