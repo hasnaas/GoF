@@ -14,6 +14,7 @@ using DesignPatterns.Structural.Decorator;
 using DesignPatterns.Structural.Facade;
 using DesignPatterns.Structural.Flyweight;
 using DesignPatterns.Structural.Bridge;
+using DesignPatterns.Structural.Proxy;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -183,7 +184,7 @@ Console.WriteLine("-----Flyweight-----");
 
 var pointService = new PointService(new PointIconFactory());
 pointService.getPoints();
-*/
+
 
 Console.WriteLine("-----Bridge-----");
 var basicRemote = new RemoteControl(new SamsungTV());
@@ -193,3 +194,23 @@ basicRemote.TurnOff();
 advancedRemote.TurnOn();
 advancedRemote.setChannel(12);
 advancedRemote.TurnOff();
+*/
+
+Console.WriteLine("-----Proxy-----");
+var dbContext = new DbContext();
+
+// We read an object (eg a product) from a database.
+var product = dbContext.getProduct(1);
+
+// We modify the properties of the object in memory.
+product.Name="Updated Name";
+
+// DbContext should keep track of changed objects in memory.
+// When we call saveChanges(), it'll automatically generate
+// the right SQL statements to update our database.
+dbContext.saveChanges();
+
+// After saving the changes to the database, we can
+// change our in-memory object again and save the changes.
+product.Name="Another name";
+dbContext.saveChanges();

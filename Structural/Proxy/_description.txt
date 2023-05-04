@@ -1,0 +1,9 @@
+﻿Problem:
+Sometimes there are memory consuming objects that are used only from time to time, their loading should be optimized. 
+In other cases we need to perform some actions unrelated to the main logic of an object, like logging and caching. 
+In other scenario, we need to restrict access to the object. 
+
+Solution:
+Proxy  pattern  provides a substitute or placeholder for another object. It can have various uses:
+A proxy can controls access to the original object, perform logging, caching, lazy loading ...
+There is a composition relationship between the proxy and the original object, but unlike Decorator pattern the proxy manages the lifecycle of the object.
