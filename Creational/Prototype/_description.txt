@@ -1,0 +1,6 @@
+﻿Problem :
+We need to be able to copy objects, without being dependant on their implementation details. Plus, there might be some private fields thant can't be copied from outside.
+
+Solution :
+The Prototype pattern delegates the cloning process to the actual objects that are being cloned. The pattern declares a common interface for all objects that support cloning.
+A prototype is an object that supports cloning.

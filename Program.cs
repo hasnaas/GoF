@@ -15,6 +15,7 @@ using DesignPatterns.Structural.Facade;
 using DesignPatterns.Structural.Flyweight;
 using DesignPatterns.Structural.Bridge;
 using DesignPatterns.Structural.Proxy;
+using DesignPatterns.Creational.Prototype;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -194,7 +195,7 @@ basicRemote.TurnOff();
 advancedRemote.TurnOn();
 advancedRemote.setChannel(12);
 advancedRemote.TurnOff();
-*/
+
 
 Console.WriteLine("-----Proxy-----");
 var dbContext = new DbContext();
@@ -214,3 +215,14 @@ dbContext.saveChanges();
 // change our in-memory object again and save the changes.
 product.Name="Another name";
 dbContext.saveChanges();
+
+*/
+
+Console.WriteLine("/****Creational patterns*****/");
+Console.WriteLine("-----Prototype-----");
+var timeline = new Timeline();
+var text = new Text("Hello");
+timeline.Add(text);
+
+var menu = new ContextMenu(timeline);
+menu.Duplicate(text);
