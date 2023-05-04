@@ -13,6 +13,7 @@ using DesignPatterns.Structural.Adapter;
 using DesignPatterns.Structural.Decorator;
 using DesignPatterns.Structural.Facade;
 using DesignPatterns.Structural.Flyweight;
+using DesignPatterns.Structural.Bridge;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -176,9 +177,19 @@ editor.OpenProject("path-to-project");
 Console.WriteLine("-----Facade-----");
 var twitterFacade = new TwitterService();
 twitterFacade.getTweets();
-*/
+
 
 Console.WriteLine("-----Flyweight-----");
 
 var pointService = new PointService(new PointIconFactory());
 pointService.getPoints();
+*/
+
+Console.WriteLine("-----Bridge-----");
+var basicRemote = new RemoteControl(new SamsungTV());
+var advancedRemote=new AdvancedRemoteControl(new SonyTV());
+basicRemote.TurnOn();
+basicRemote.TurnOff();
+advancedRemote.TurnOn();
+advancedRemote.setChannel(12);
+advancedRemote.TurnOff();

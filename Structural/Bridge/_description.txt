@@ -1,0 +1,9 @@
+﻿Problem :
+A large hieararchy of classes throw grow in two independant dimensions. 
+For example : a colorful shape class whould have entangled implementations: redCircle, blueCircle, redSquare, blueSquare...Adding new shape types and colors will make the hierarchy grow exponentially.
+
+Solution:
+Bridge pattern  splits that problematic hieararchy into two separate hierarchies: abstraction and implementation.
+They can be developed independently of each other.
+Applied to the previous example : the color dimension is extracted into a separate class and the shape class will have a composition relationship with the color class. 
+The code example illustrates another example : a universal remote controller that can be basic or advanced, and can work with different tv brands -> two hieararchies: remote controllers and tvs
