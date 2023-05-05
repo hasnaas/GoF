@@ -7,4 +7,6 @@ Design patterns are elegant solutions to  repeating problems in object-oriented 
 
 This repo provide sample implementations of basic examples. 
 
+Main reference: https://codewithmosh.com/ 
+
 
