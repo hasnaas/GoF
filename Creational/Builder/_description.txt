@@ -1,0 +1,4 @@
+﻿The builder pattern separates the construction of an object from its representation. Generally it is used to construct complex objects step by step.
+The pattern allows  to produce different types and representations of an object using the same construction code.
+
+For example we need to export a document to different types of format(pdf, html, image)... we don't want the conversion code to be included in the document class becasue that would violate the OCP and induce tight coupling.

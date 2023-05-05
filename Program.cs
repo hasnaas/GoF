@@ -19,6 +19,7 @@ using DesignPatterns.Creational.Prototype;
 using DesignPatterns.Creational.Singleton;
 using DesignPatterns.Creational.FactoryMethod;
 using DesignPatterns.Creational.AbstractFactory;
+using DesignPatterns.Creational.Builder;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -245,10 +246,23 @@ gScheduler.Schedule(new Event());
 
 var aScheduler = new ArabianScheduler();
 aScheduler.Schedule(new Event());
-*/
+
 
 Console.WriteLine("-----Abstract Factory-----");
 var form = new ContactForm();
 form.render(new DesignPatterns.Creational.AbstractFactory.Theme1.Theme1WidgetFactory());
 form.render(new DesignPatterns.Creational.AbstractFactory.Theme2.Theme2WidgetFactory());
+*/
 
+Console.WriteLine("-----Builder-----");
+var document = new DesignPatterns.Creational.Builder.Document();
+document.Add(new TextElement("Hello World"));
+document.Add(new ImageElement("pic1.jpg"));
+
+var textConverter = new TextDocumentBuilder();
+var htmlConverter = new HtmlDocumentBuilder();
+
+document.Export(htmlConverter, ".\\export.html");
+
+// Only writes the text elements to the file
+document.Export(textConverter, ".\\export.txt");
