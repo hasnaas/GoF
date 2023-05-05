@@ -1,0 +1,6 @@
+﻿Problem :
+We need to work  with various families of related products, without depending on the concrete classes of those products . That can be because they might be unknown beforehand or we simply want to allow for future extensibility.
+For example, in a UI intialization, we want to be able to support various themes. For each theme, a different set of widgets need to be generated.
+
+Solution:
+the abstract factory pattern provides an interface for creating families of related objects. 

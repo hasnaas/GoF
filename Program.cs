@@ -18,6 +18,7 @@ using DesignPatterns.Structural.Proxy;
 using DesignPatterns.Creational.Prototype;
 using DesignPatterns.Creational.Singleton;
 using DesignPatterns.Creational.FactoryMethod;
+using DesignPatterns.Creational.AbstractFactory;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -237,10 +238,17 @@ config.Set("key1", "val1");
 
 var other=ConfigManager.GetInstance();
 Console.WriteLine(other.Get("key1"));
-*/
+
 Console.WriteLine("-----Factory-----");
 var gScheduler = new GregorianScheduler();
 gScheduler.Schedule(new Event());
 
 var aScheduler = new ArabianScheduler();
 aScheduler.Schedule(new Event());
+*/
+
+Console.WriteLine("-----Abstract Factory-----");
+var form = new ContactForm();
+form.render(new DesignPatterns.Creational.AbstractFactory.Theme1.Theme1WidgetFactory());
+form.render(new DesignPatterns.Creational.AbstractFactory.Theme2.Theme2WidgetFactory());
+

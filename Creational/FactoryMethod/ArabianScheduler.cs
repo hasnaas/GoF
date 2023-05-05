@@ -8,7 +8,7 @@ namespace DesignPatterns.Creational.FactoryMethod
 {
     public class ArabianScheduler : Scheduler
     {
-        public override Calendar GetCalendar()
+        protected override Calendar GetCalendar()
         {
             return new ArabianCalendar();
         }

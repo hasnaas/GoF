@@ -8,7 +8,7 @@ namespace DesignPatterns.Creational.FactoryMethod
 {
     public class GregorianScheduler : Scheduler
     {
-        public override Calendar GetCalendar()
+        protected override Calendar GetCalendar()
         {
             return new GregorianCalendar();
         }
