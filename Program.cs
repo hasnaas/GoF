@@ -17,6 +17,7 @@ using DesignPatterns.Structural.Bridge;
 using DesignPatterns.Structural.Proxy;
 using DesignPatterns.Creational.Prototype;
 using DesignPatterns.Creational.Singleton;
+using DesignPatterns.Creational.FactoryMethod;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("GoF Design Patterns Overview");
@@ -228,7 +229,7 @@ timeline.Add(text);
 
 var menu = new ContextMenu(timeline);
 menu.Duplicate(text);
-*/
+
 Console.WriteLine("-----Singleton-----");
 
 var config = ConfigManager.GetInstance();
@@ -236,3 +237,10 @@ config.Set("key1", "val1");
 
 var other=ConfigManager.GetInstance();
 Console.WriteLine(other.Get("key1"));
+*/
+Console.WriteLine("-----Factory-----");
+var gScheduler = new GregorianScheduler();
+gScheduler.Schedule(new Event());
+
+var aScheduler = new ArabianScheduler();
+aScheduler.Schedule(new Event());

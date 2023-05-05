@@ -1,0 +1,7 @@
+﻿Problem:
+We need to reduce coupling between two toplevel classes , and have the flexibility of subclasses using different types of objects(that have a common interface). 
+For example in a web development framework, we want that the web controler can work with different types of view rendering engines.
+another example, for a task scheduling framework, we want to be able to work with different kinds of calendars. 
+
+Solution:
+the factory patterns defers the creation of an object to subclasses. in the previous las example, each scheduler subclass will be responsible of the creation of its own calendar. 
